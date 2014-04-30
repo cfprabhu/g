@@ -10,8 +10,8 @@
 			if ( len(rc.id) )
 				Application.AdminMenuDAO.update(argumentcollection=rc);
 			else{ 
-				sort=Application.AdminMenuDAO.getSortMax(AdminMenuGroup_id=rc.AdminMenuGroup_id);
-                rc.sortOrder=sort.sortOrder;
+				//sort=Application.AdminMenuDAO.getSortMax(AdminMenuGroup_id=rc.AdminMenuGroup_id);
+                //rc.sortOrder=sort.sortOrder;
 				Application.AdminMenuDAO.create(argumentcollection=rc);
 			}
 			rc.msg = "success:::Admin Menu saved successfully.";
@@ -25,8 +25,8 @@
 		}
 		
 		function addEdit (rc){
-			param name="url.id" default="";
-			rc.qData = Application.AdminMenuDAO.read(id=id);
+			param name="rc.id" default="";
+			rc.qData = Application.AdminMenuDAO.read(id=rc.id);
 			rc.qAdminMenuGroups =Application.AdminMenuGroupsDAO.read();
 		}
 	</cfscript>

@@ -1,7 +1,7 @@
 <cfoutput>
 	<form class="form-horizontal" action="#buildurl('userGroups.save')#" method="post" role="form">
 		<fieldset>
-			<cfif len(url.id)>
+			<cfif len(rc.id)>
 			   <legend>Edit User Group</legend>
 			 <cfelse>
 			   <legend>Add User Group</legend>

@@ -23,8 +23,8 @@
 		}
 		
 		function addEdit (rc){
-			param name="url.id" default="";
-			rc.qData = Application.userGroupsDAO.read(id=id);
+			param name="rc.id" default="";
+			rc.qData = Application.userGroupsDAO.read(id=rc.id);
 		}
 	</cfscript>
 

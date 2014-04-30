@@ -2,7 +2,7 @@
 	
 	<form class="form-horizontal" action="#buildurl('AdminMenu.save')#" method="post" role="form">
 	    <fieldset>
-			<cfif len(url.id)>
+			<cfif len(rc.id)>
 			  <legend>Edit Admin Menu</legend>
 			<cfelse>
 			  <legend>Add Admin Menu</legend>

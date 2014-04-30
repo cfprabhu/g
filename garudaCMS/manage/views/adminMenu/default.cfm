@@ -41,12 +41,11 @@
 					    <span class="glyphicon glyphicon-minus"></span>	
 					</cfif>
 				</td>
-				<td>
+				<td class="text-center">
 					<a class="glyphicon glyphicon-pencil" rel="bootTip" title="Edit Admin Menu" href="#buildurl('AdminMenu.addEdit')#&id=#AMid#"></a>&nbsp;&nbsp;|&nbsp;&nbsp; 
-
 					<a class="glyphicon glyphicon-trash" rel="bootTip" title="Delete Admin Menu"  href="javascript:void(0);" onclick="javascript:confirmDelete('#AMid#')" ></a>
 				</td>
-				<td>
+				<td class="text-center">
 					<a class="glyphicon glyphicon-move" href="javascript:void(0);" style="cursor:move;"  rel="tooltip" title="Sort Admin menu group"></a>&nbsp;&nbsp;|&nbsp;&nbsp;
 					<span class="arrow-up"><a class="glyphicon glyphicon-arrow-up" href="javascript:void(0);" rel="tooltip" title="Move up"></a>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
 					<span class="arrow-down"><a class="glyphicon glyphicon-arrow-down" href="javascript:void(0);" rel="tooltip" title="Move down"></a></span>

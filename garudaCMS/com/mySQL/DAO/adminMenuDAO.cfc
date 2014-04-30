@@ -13,18 +13,19 @@
 		<cfset var qry="" />
 		<cfset var id = createUUID()>
 		
+		
 		<cfquery name="qry" datasource="#variables.dsn#" result="result">
 			INSERT INTO tAdminMenu (
 				id,AdminMenuGroup_id,title,sortOrder,isHidden,linkURL,isSuperAdmin
-			) values (
-				<cfqueryparam value='#id#' cfsqltype='cf_sql_varchar'>,
-				<cfqueryparam value='#arguments.AdminMenuGroup_id#' cfsqltype='cf_sql_varchar'>,
-				<cfqueryparam value='#arguments.title#' cfsqltype='cf_sql_varchar'>,
-				<cfqueryparam value='#arguments.sortOrder#' cfsqltype='cf_sql_varchar'>,
-				<cfqueryparam value='#arguments.isHidden#' cfsqltype='cf_sql_varchar'>,
-				<cfqueryparam value='#arguments.linkURL#' cfsqltype='cf_sql_varchar'>,
-				<cfqueryparam value='#arguments.isSuperAdmin#' cfsqltype='cf_sql_varchar'>
-			)			
+			) SELECT
+				<cfqueryparam value = '#id#' cfsqltype='cf_sql_varchar'>,
+				<cfqueryparam value = '#arguments.AdminMenuGroup_id#' cfsqltype='cf_sql_varchar'>,
+				<cfqueryparam value = '#arguments.title#' cfsqltype='cf_sql_varchar'>,
+				IFNULL(MAX(sortOrder),0)+1 AS sortOrder ,
+				<cfqueryparam value = '#arguments.isHidden#' cfsqltype='cf_sql_varchar'>,
+				<cfqueryparam value = '#arguments.linkURL#' cfsqltype='cf_sql_varchar'>,
+				<cfqueryparam value = '#arguments.isSuperAdmin#' cfsqltype='cf_sql_varchar'>
+			FROM tadminmenu WHERE AdminMenuGroup_id = <cfqueryparam value='#arguments.AdminMenuGroup_id#' cfsqltype='cf_sql_varchar'>			
 		</cfquery>
 		
 		<cfreturn id>		
@@ -55,7 +56,7 @@
 		<cfreturn qry />
 	</cffunction>
 
-	<cffunction name="getSortMax">
+	<!--- <cffunction name="getSortMax">
 		<cfargument name="AdminMenuGroup_id" type="any" required="false" />
 		
 		<cfquery name="qry" datasource="#variables.dsn#">
@@ -66,7 +67,7 @@
 		</cfquery>
 		
 		<cfreturn qry />
-	</cffunction>
+	</cffunction> --->
 			
 	<cffunction name="update" returntype="void">
 		<cfargument name="id" type="any" required="false" />
