@@ -2,7 +2,7 @@
 <cfoutput>
 	<div class="row">
 		<p class="col-sm-12">
-			<a href="#buildurl('userGroups.addEdit')#" class="btn btn-success pull-right"  rel="bootTip" title="Add new usergroup"><span class="glyphicon glyphicon-plus"></span> Add User Group</a>
+			<a href="#buildurl('userGroups.addEdit')#" class="btn btn-success pull-right"  rel="bootTip" title="Add New User Group"><span class="glyphicon glyphicon-plus"></span> Add User Group</a>
 		</p>
 	</div>
 </cfoutput>	
@@ -34,8 +34,8 @@
 					</cfif>
 				</td>
 	            <td>
-	            	<a class="glyphicon glyphicon-pencil" rel="bootTip" title="Edit usergroup" href="#buildurl('userGroups.addEdit')#&id=#id#"></a> | 
-				    <a class="glyphicon glyphicon-trash" rel="bootTip" title="Delete usergroup"  href="javascript:void(0);" onclick="javascript:confirmDelete('#id#')" ></a>
+	            	<a class="glyphicon glyphicon-pencil" rel="bootTip" title="Edit User Group" href="#buildurl('userGroups.addEdit')#&id=#id#"></a> | 
+				    <a class="glyphicon glyphicon-trash" rel="bootTip" title="Delete User Group"  href="javascript:void(0);" onclick="javascript:confirmDelete('#id#')" ></a>
 			   </td>
 			</tr>
 		</cfoutput>

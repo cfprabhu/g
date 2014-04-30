@@ -14,13 +14,13 @@
                 rc.sortOrder=sort.sortOrder;
 				Application.AdminMenuDAO.create(argumentcollection=rc);
 			}
-			rc.msg = "success:::AdminMenu saved successfully.";
+			rc.msg = "success:::Admin Menu saved successfully.";
 			variables.fw.redirect("AdminMenu", "msg");		
 		}
 		
 		function delete(rc){
 			Application.AdminMenuDAO.delete(rc.id);
-			rc.msg = "danger:::AdminMenu deleted successfully.";
+			rc.msg = "danger:::Admin Menu deleted successfully.";
 			variables.fw.redirect("AdminMenu", "msg");
 		}
 		

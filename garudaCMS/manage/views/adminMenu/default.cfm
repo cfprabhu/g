@@ -2,7 +2,7 @@
 <cfoutput>	
 	<div class="row">
 		<p class="col-sm-12">
-			<a href="#buildurl('AdminMenu.addEdit')#" class="btn btn-success pull-right"  rel="bootTip" title="Add new AdminMenu"><span class="glyphicon glyphicon-plus"></span> Add Admin Menu</a>
+			<a href="#buildurl('AdminMenu.addEdit')#" class="btn btn-success pull-right"  rel="bootTip" title="Add new Admin Menu"><span class="glyphicon glyphicon-plus"></span> Add Admin Menu</a>
 		</p>
 	</div>
 </cfoutput>	
@@ -42,9 +42,9 @@
 					</cfif>
 				</td>
 				<td>
-					<a class="glyphicon glyphicon-pencil" rel="bootTip" title="Edit AdminMenu" href="#buildurl('AdminMenu.addEdit')#&id=#AMid#"></a>&nbsp;&nbsp;|&nbsp;&nbsp; 
+					<a class="glyphicon glyphicon-pencil" rel="bootTip" title="Edit Admin Menu" href="#buildurl('AdminMenu.addEdit')#&id=#AMid#"></a>&nbsp;&nbsp;|&nbsp;&nbsp; 
 
-					<a class="glyphicon glyphicon-trash" rel="bootTip" title="Delete AdminMenu"  href="javascript:void(0);" onclick="javascript:confirmDelete('#AMid#')" ></a>
+					<a class="glyphicon glyphicon-trash" rel="bootTip" title="Delete Admin Menu"  href="javascript:void(0);" onclick="javascript:confirmDelete('#AMid#')" ></a>
 				</td>
 				<td>
 					<a class="glyphicon glyphicon-move" href="javascript:void(0);" style="cursor:move;"  rel="tooltip" title="Sort Admin menu group"></a>&nbsp;&nbsp;|&nbsp;&nbsp;

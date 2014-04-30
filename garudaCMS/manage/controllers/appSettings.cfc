@@ -3,28 +3,28 @@
 	<cfscript>
 		
 		function default(rc){
-			rc.qList= Application.appSettingsDAO.read();
+			rc.qList = Application.appSettingsDAO.read();
 		}
 
 		function save(rc){
 			if ( len(id) )
-				Application.appSettingsDAO.update(argumentcollection=form);
+				Application.appSettingsDAO.update(argumentcollection = rc);
 			else
-				Application.appSettingsDAO.create(argumentcollection=form);
+				Application.appSettingsDAO.create(argumentcollection = rc);
 			
-			rc.msg = "success:::appsetting saved successfully.";
+			rc.msg = "success:::App Settings saved successfully.";
 			variables.fw.redirect("appSettings", "msg");		
 		}
 		
 		function delete(rc){
-			Application.appSettingsDAO.delete(url.id);
-			rc.msg = "danger:::appsetting deleted successfully.";
+			Application.appSettingsDAO.delete(rc.id);
+			rc.msg = "danger:::App Setting deleted successfully.";
 			variables.fw.redirect("appSettings", "msg");
 		}
 		
 		function addEdit (rc){
-			param name="url.id" default="";
-			rc.qData = Application.appSettingsDAO.read(id=id);
+			param name = "url.id" default = "";
+			rc.qData = Application.appSettingsDAO.read(id = id);
 		}
 	</cfscript>
 
