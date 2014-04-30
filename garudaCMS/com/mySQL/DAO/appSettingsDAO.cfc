@@ -25,7 +25,7 @@
 	
 	
 	<cffunction name="read" returntype="query">
-		<cfargument name="id" type="any" required="false" />
+		<cfargument name="ID" type="any" required="false" />
 		
 		<cfset var qry = "" />
 		
@@ -35,8 +35,8 @@
 				FROM tappsettings
 				WHERE  1 = 1 
 				
-				<cfif structKeyExists(arguments,"id")>
-				AND id = <cfqueryparam value='#arguments.id#' cfsqltype='cf_sql_varchar'>
+				<cfif structKeyExists(arguments,"ID")>
+				AND ID = <cfqueryparam value='#arguments.ID#' cfsqltype='cf_sql_varchar'>
 				</cfif>
 				ORDER BY isSystem,title
 			</cfquery>
@@ -45,7 +45,7 @@
 	</cffunction>
 			
 	<cffunction name="update" returntype="void">
-		<cfargument name="id" type="any" required="false" />
+		<cfargument name="ID" type="any" required="false" />
 		<cfargument name="title" type="any" required="false" />
 		<cfargument name="variable" type="any" required="false" />
 		<cfargument name="value" type="any" required="false" />
@@ -56,10 +56,10 @@
 			<cfquery name="qry" datasource="#variables.dsn#">
 				UPDATE tappsettings
 				SET title = <cfqueryparam value='#arguments.title#' cfsqltype='cf_sql_varchar'>, 
-				variable = <cfqueryparam value='#arguments.variable#' cfsqltype='cf_sql_varchar'>, 
-				value = <cfqueryparam value='#arguments.value#' cfsqltype='cf_sql_varchar'>, 
-				isSystem = <cfqueryparam value='#arguments.isSystem#' cfsqltype='cf_sql_varchar'>
-				WHERE id = <cfqueryparam value='#arguments.id#' cfsqltype='cf_sql_varchar'>
+					variable = <cfqueryparam value='#arguments.variable#' cfsqltype='cf_sql_varchar'>, 
+					value = <cfqueryparam value='#arguments.value#' cfsqltype='cf_sql_varchar'>, 
+					isSystem = <cfqueryparam value='#arguments.isSystem#' cfsqltype='cf_sql_varchar'>
+				WHERE ID = <cfqueryparam value='#arguments.ID#' cfsqltype='cf_sql_varchar'>
 			</cfquery>
 		
 		<cfreturn />
@@ -67,13 +67,13 @@
 	
 	
 	<cffunction name="delete" returntype="void">
-		<cfargument name="id" type="any" required="false" />
+		<cfargument name="ID" type="any" required="false" />
 		
 		<cfset var qry = "" />
 		
 			<cfquery name="qry" datasource="#variables.dsn#">
 				DELETE FROM tappsettings
-				WHERE id = <cfqueryparam value='#arguments.id#' cfsqltype='cf_sql_varchar'>
+				WHERE ID = <cfqueryparam value='#arguments.ID#' cfsqltype='cf_sql_varchar'>
 			</cfquery>
 
 		<cfreturn />

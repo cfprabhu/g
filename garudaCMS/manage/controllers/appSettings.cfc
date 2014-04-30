@@ -7,7 +7,7 @@
 		}
 
 		function save(rc){
-			if ( len(id) )
+			if ( len(ID) )
 				Application.appSettingsDAO.update(argumentcollection = rc);
 			else
 				Application.appSettingsDAO.create(argumentcollection = rc);
@@ -17,14 +17,14 @@
 		}
 		
 		function delete(rc){
-			Application.appSettingsDAO.delete(rc.id);
+			Application.appSettingsDAO.delete(rc.ID);
 			rc.msg = "danger:::App Setting deleted successfully.";
 			variables.fw.redirect("appSettings", "msg");
 		}
 		
 		function addEdit (rc){
-			param name = "url.id" default = "";
-			rc.qData = Application.appSettingsDAO.read(id = id);
+			param name = "rc.ID" default = "";
+			rc.qData = Application.appSettingsDAO.read(ID = rc.ID);
 		}
 	</cfscript>
 
