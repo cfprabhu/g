@@ -11,19 +11,20 @@
 		}
 
 		function save(rc){
-			if (len(form.id))
-				Application.AdminMenuGroupsDAO.update(argumentcollection=form);
+			if (len(rc.id))
+				Application.AdminMenuGroupsDAO.update(argumentcollection=rc);
 			else{
-				sOrder = Application.AdminMenuGroupsDAO.maxSort(o_title=title);
-				Application.AdminMenuGroupsDAO.create(argumentcollection=form,sortOrder=sOrder.sort);
+				sort=Application.AdminMenuGroupsDAO.getMaxSort();
+				rc.sortOrder = sort.sortOrder;
+				Application.AdminMenuGroupsDAO.create(argumentcollection=rc);
 			}
-			rc.msg = "success:::AdminMenugroup saved successfully.";
+			rc.msg = "success:::Admin Menu Group saved successfully.";
 			variables.fw.redirect("AdminMenugroups", "msg");		
 		}
 		
 		function delete(rc){
 			Application.AdminMenuGroupsDAO.delete(url.id);
-			rc.msg = "danger:::AdminMenugroup deleted successfully.";
+			rc.msg = "danger:::Admin Menu Group deleted successfully.";
 			variables.fw.redirect("AdminMenugroups", "msg");
 		}
 		

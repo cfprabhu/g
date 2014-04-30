@@ -2,7 +2,7 @@
 <cfoutput>
 <div class="row">
 	<p class="col-sm-12">
-		<a href="#buildurl('users.addEdit')#" class="btn btn-success pull-right"  rel="bootTip" title="Add new Tuser">
+		<a href="#buildurl('users.addEdit')#" class="btn btn-success pull-right"  rel="bootTip" title="Add New User">
 
 			<span class="glyphicon glyphicon-plus"></span> Add User
 		</a>
