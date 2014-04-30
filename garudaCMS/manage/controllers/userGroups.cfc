@@ -11,7 +11,6 @@
 				Application.userGroupsDAO.update(argumentcollection=form);
 			else
 				Application.userGroupsDAO.create(argumentcollection=form);
-			
 			rc.msg = "success:::User Group saved successfully.";
 			variables.fw.redirect("userGroups", "msg");		
 		}

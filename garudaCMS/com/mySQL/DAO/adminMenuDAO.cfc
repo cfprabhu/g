@@ -55,19 +55,6 @@
 		
 		<cfreturn qry />
 	</cffunction>
-
-	<!--- <cffunction name="getSortMax">
-		<cfargument name="AdminMenuGroup_id" type="any" required="false" />
-		
-		<cfquery name="qry" datasource="#variables.dsn#">
-			SELECT MAX(sortOrder)+1 as sortOrder
-			FROM tAdminMenu
-			where AdminMenuGroup_id= <cfqueryparam value='#arguments.AdminMenuGroup_id#' cfsqltype='cf_sql_varchar'>
-			
-		</cfquery>
-		
-		<cfreturn qry />
-	</cffunction> --->
 			
 	<cffunction name="update" returntype="void">
 		<cfargument name="id" type="any" required="false" />

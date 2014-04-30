@@ -9,11 +9,8 @@
 		function save(rc){
 			if ( len(rc.id) )
 				Application.AdminMenuDAO.update(argumentcollection=rc);
-			else{ 
-				//sort=Application.AdminMenuDAO.getSortMax(AdminMenuGroup_id=rc.AdminMenuGroup_id);
-                //rc.sortOrder=sort.sortOrder;
+			else
 				Application.AdminMenuDAO.create(argumentcollection=rc);
-			}
 			rc.msg = "success:::Admin Menu saved successfully.";
 			variables.fw.redirect("AdminMenu", "msg");		
 		}

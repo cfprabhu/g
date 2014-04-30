@@ -1,33 +1,28 @@
 <cfoutput>
-	<style type="text/css">
-		.align{
-			float: left;
-		}
-	</style>
-<form class="form-horizontal" action="#buildurl('AdminMenugroups.save')#" method="post" role="form">
+<form class = "form-horizontal" action = "#buildurl('AdminMenugroups.save')#" method = "post" role = "form">
 		<fieldset>
-			<cfif val(url.id)>
-				<legend>Edit AdminMenugroup</legend>
+			<cfif val(url.ID)>
+				<legend>Edit Admin Menu Group</legend>
 			<cfelse>
-				<legend>Add AdminMenugroup</legend>
+				<legend>Add Admin Menu Group</legend>
 			</cfif>
-			<input type="hidden" id="id" name="id"  class="" value="#rc.qData.id#">
-			<div class="form-group">
-				<label class="control-label col-sm-2" for="title">Title</label>
-				<div class="col-sm-6 controls">
-					<input type="text" id="title" name="title" placeholder="title" class="form-control required" value="#rc.qData.title#" maxlength="20">
+			<input type = "hidden" ID = "ID" name = "ID"  class = "" value = "#rc.qData.ID#">
+			<div class = "form-group">
+				<label class = "control-label col-sm-2" for = "title">Title</label>
+				<div class = "col-sm-6 controls">
+					<input type = "text" ID = "title" name = "title" placeholder = "title" class = "form-control required" value = "#rc.qData.title#" maxlength = "20">
 				</div>
 			</div>
-			<div class="form-group">
-				<label class="control-label col-sm-2" for="isSuperAdmin">isSuperAdmin</label>
-				<div class="col-sm-6 controls">
-					<input type="checkbox" id="isSuperAdmin" name="isSuperAdmin" class="form-control" <cfif #rc.qData.isSuperAdmin# eq 1>checked</cfif> value="1">
+			<div class = "form-group">
+				<label class = "control-label col-sm-2" for = "isSuperAdmin"></label>
+				<div class = "col-sm-6 controls">
+					<input type = "checkbox" ID = "isSuperAdmin" name = "isSuperAdmin"<cfif #rc.qData.isSuperAdmin# eq 1>checked</cfif> value = "1">&nbsp;isSuperAdmin
 				</div>
 			</div>
-			<div class="form-group form-actions">
-				<div class="col-sm-offset-2 col-sm-10">
-					<input class="btn btn-primary" type="submit" name="AddEdit" value="Save changes" />
-					<input class="btn btn-default" type="button" value="Cancel" />
+			<div class = "form-group form-actions">
+				<div class = "col-sm-offset-2 col-sm-10">
+					<input class = "btn btn-primary" type = "submit" name = "AddEdit"value = "Save changes" />
+					<input class = "btn btn-default" type = "button" value = "Cancel" />
 				</div>
 			</div>
 	</fieldset>

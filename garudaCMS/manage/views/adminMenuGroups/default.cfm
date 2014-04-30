@@ -21,12 +21,17 @@
 		<tr>
 			<td>#title#</td>
 			<td>
-				<cfif #isSuperAdmin# eq 1>
-					<span class="glyphicon glyphicon-ok"></span>
+				<cfif isSuperAdmin eq 1>
+					<div class="text-center">
+						<span class="glyphicon glyphicon-ok"></span>
+					</div>
 				</cfif>
 			</td>
-			<td><a class="glyphicon glyphicon-pencil" rel="bootTip" title="Edit Admin Menu group" href="#buildurl('AdminMenugroups.addEdit')#&id=#id#"></a> | 
-				<a class="glyphicon glyphicon-trash" rel="bootTip" title="Delete Admin Menu group"  href="javascript:void(0);" onclick="javascript:confirmDelete('#id#')" ></a></td>
+			<td>
+				<div class="text-center">
+					<a class="glyphicon glyphicon-pencil" rel="bootTip" title="Edit Admin Menu group" href="#buildurl('AdminMenugroups.addEdit')#&ID=#ID#"></a>&nbsp;&nbsp; | &nbsp;
+					<a class="glyphicon glyphicon-trash" rel="bootTip" title="Delete Admin Menu group"  href="javascript:voID(0);" onclick="javascript:confirmDelete('#ID#')" ></a></td>
+				</div>
 			</tr>
 		</cfoutput>
 	</tbody>
