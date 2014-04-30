@@ -1,0 +1,48 @@
+<h1>Admin menu</h1><hr>
+<cfoutput>
+<div class="row">
+	<p class="col-sm-12">
+		<a href="#buildurl('AdminMenu.addEdit')#" class="btn btn-success pull-right"  rel="bootTip" title="Add new AdminMenu">
+
+			<span class="glyphicon glyphicon-plus"></span> Add AdminMenu
+		</a>
+	</p>
+</div>
+</cfoutput>	
+<table class="table table-striped table-bordered table-condensed tablesorter">
+	<thead>
+		<tr>
+
+			<th>Admin menu Group</th>
+			<th>title</th>
+			<th>sort Order</th>
+			<th>is Hidden</th>
+			<th>link URL</th>
+			<th>is Super Admin</th>
+			<th class="nosort">Actions</th>
+			<th class="nosort">Sort</th>
+		</tr>
+	</thead>
+	<tbody>
+		<cfoutput query="rc.qlist">
+			<tr>
+				<td>#AdminMenuGroup_id#</td>
+				<td>#title#</td>
+				<td>#sortOrder#</td>
+				<td>#isHidden#</td>
+				<td>#linkURL#</td>
+				<td>#isSuperAdmin#</td>
+				<td>
+					<a class="glyphicon glyphicon-pencil" rel="bootTip" title="Edit AdminMenu" href="#buildurl('AdminMenu.addEdit')#&id=#id#"></a>&nbsp;&nbsp;|&nbsp;&nbsp; 
+
+					<a class="glyphicon glyphicon-trash" rel="bootTip" title="Delete AdminMenu"  href="javascript:void(0);" onclick="javascript:confirmDelete('#id#')" ></a>
+				</td>
+				<td>
+					<a class="glyphicon glyphicon-move" href="javascript:void(0);" style="cursor:move;"  rel="tooltip" title="Sort Admin menu group"></a>&nbsp;&nbsp;|&nbsp;&nbsp;
+					<span class="arrow-up"><a class="glyphicon glyphicon-arrow-up" href="javascript:void(0);" rel="tooltip" title="Move up"></a>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+					<span class="arrow-down"><a class="glyphicon glyphicon-arrow-down" href="javascript:void(0);" rel="tooltip" title="Move down"></a></span>
+				</td>	
+			</tr>
+		</cfoutput>
+	</tbody>
+</table>

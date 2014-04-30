@@ -1,0 +1,36 @@
+<h1>userGroups</h1><hr>
+<cfoutput>
+<div class="row">
+	<p class="col-sm-12">
+		<a href="#buildurl('userGroups.addEdit')#" class="btn btn-success pull-right"  rel="bootTip" title="Add new Tusergroup">
+
+			<span class="glyphicon glyphicon-plus"></span> Add Tusergroup
+		</a>
+	</p>
+</div>
+</cfoutput>	
+<table class="table table-striped table-bordered table-condensed tablesorter">
+	<thead>
+		<tr>
+			<th>id</th>
+<th>title</th>
+<th>is Admin</th>
+<th>is Super Admin</th>
+
+			<th class="nosort">Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<cfoutput query="rc.qlist">
+			<tr>
+				<td>#id#</td>
+<td>#title#</td>
+<td>#isAdmin#</td>
+<td>#isSuperAdmin#</td>
+	
+				<td><a class="glyphicon glyphicon-pencil" rel="bootTip" title="Edit Tusergroup" href="#buildurl('userGroups.addEdit')#&id=#id#"></a> | 
+				<a class="glyphicon glyphicon-trash" rel="bootTip" title="Delete Tusergroup"  href="javascript:void(0);" onclick="javascript:confirmDelete('#id#')" ></a></td>
+			</tr>
+		</cfoutput>
+	</tbody>
+</table>

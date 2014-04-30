@@ -1,0 +1,31 @@
+<cfcomponent output="false" hint="AdminMenu FW/1 controller." extends="base">
+	
+	<cfscript>
+		
+		function default(rc){
+			rc.qList= Application.AdminMenuDAO.read();
+		}
+
+		function save(rc){
+			if ( len(id) )
+				Application.AdminMenuDAO.update(argumentcollection=form);
+			else
+				Application.AdminMenuDAO.create(argumentcollection=form);
+			
+			rc.msg = "success:::AdminMenu saved successfully.";
+			variables.fw.redirect("AdminMenu", "msg");		
+		}
+		
+		function delete(rc){
+			Application.AdminMenuDAO.delete(url.id);
+			rc.msg = "danger:::AdminMenu deleted successfully.";
+			variables.fw.redirect("AdminMenu", "msg");
+		}
+		
+		function addEdit (rc){
+			param name="url.id" default="";
+			rc.qData = Application.AdminMenuDAO.read(id=id);
+		}
+	</cfscript>
+
+</cfcomponent>
