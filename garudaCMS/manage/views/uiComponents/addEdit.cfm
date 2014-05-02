@@ -7,26 +7,26 @@
 				<legend>Add UI Component</legend>
 			</cfif>
 			
-			<input type="hidden" id="id" name="id"  class="" value="#rc.qData.ID#">
+			<input type="hidden" ID="ID" name="ID"  class="" value="#rc.qData.ID#">
 
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="title">Title</label>
 					<div class="col-sm-6 controls">
-						<input type="text" id="title" name="title" placeholder="title" class="form-control " value="#rc.qData.title#">
+						<input type="text" ID="title" name="title" placeholder="title" class="form-control " value="#rc.qData.title#">
 					</div>
 			</div>
 		
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="content">Content</label>  
 					<div class="col-sm-6 controls">
-						<textarea id="content" name="content" placeholder="content" class="form-control richtextbox" rows=3 >#rc.qData.content#</textarea>
+						<textarea ID="content" name="content" placeholder="content" class="form-control richtextbox" rows=3 >#rc.qData.content#</textarea>
 					</div>
 			</div>
 
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="template">Template</label>
 					<div class="col-sm-6 controls">	
-						<select class="form-control required" name="template" id="template">
+						<select class="form-control required" name="template" ID="template">
 							<option value="">Select Template</option>				
 								<cfloop query="rc.directoryList">
 						  			<option  <cfif rc.directoryList.name eq rc.qData.template>selected</cfif> value="#rc.directoryList.name#">#rc.directoryList.name#</option>	  					
