@@ -42,7 +42,7 @@
 					</cfif>
 				</td>
 				<td class="text-center">
-					<a class="glyphicon glyphicon-pencil" rel="bootTip" title="Edit Admin Menu" href="#buildurl('AdminMenu.addEdit')#&id=#AMid#"></a>&nbsp;&nbsp;|&nbsp;&nbsp; 
+					<a class="glyphicon glyphicon-pencil" rel="bootTip" title="Edit Admin Menu" href="#buildurl('AdminMenu.addEdit')#&ID=#AMid#"></a>&nbsp;&nbsp;|&nbsp;&nbsp; 
 					<a class="glyphicon glyphicon-trash" rel="bootTip" title="Delete Admin Menu"  href="javascript:void(0);" onclick="javascript:confirmDelete('#AMid#')" ></a>
 				</td>
 				<td class="text-center">

@@ -1,18 +1,18 @@
 <cfoutput>
 	<form class="form-horizontal" action="#buildurl('appSettings.save')#" method="post" role="form">
 		<fieldset>
-			<cfif len(url.id)> 
+			<cfif len(rc.id)> 
 				<legend>Edit App Setting</legend>
 			<cfelse>
 				<legend>Add App Setting</legend>
 			</cfif>
 
-			<input type="hidden" id="id" name="id"  class="" value="#rc.qData.id#">
+			<input type="hidden" id="id" name="id"  class="" value="#rc.qData.ID#">
 
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="title">title</label>
 					<div class="col-sm-6 controls">
-						<input type="text" id="title" name="title" placeholder="title" class="form-control" value="#rc.qData.title#" 
+						<input type="text" id="title" name="title" placeholder="title" class="form-control required" value="#rc.qData.title#" 
 					 	<cfif rc.qData.isSystem eq 1>
 					 		readonly
 					 	</cfif>>
@@ -22,7 +22,7 @@
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="variable">variable</label>
 					<div class="col-sm-6 controls">
-						<input type="text" id="variable" name="variable" placeholder="variable" class="form-control"  value="#rc.qData.variable#"
+						<input type="text" id="variable" name="variable" placeholder="variable" class="form-control required"  value="#rc.qData.variable#"
 					  		<cfif rc.qData.isSystem eq 1>
 					  			readonly
 					  		</cfif>>

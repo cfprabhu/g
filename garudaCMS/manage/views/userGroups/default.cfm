@@ -34,8 +34,8 @@
 					</cfif>
 				</td>
 	            <td>
-	            	<a class="glyphicon glyphicon-pencil" rel="bootTip" title="Edit User Group" href="#buildurl('userGroups.addEdit')#&id=#id#"></a> | 
-				    <a class="glyphicon glyphicon-trash" rel="bootTip" title="Delete User Group"  href="javascript:void(0);" onclick="javascript:confirmDelete('#id#')" ></a>
+	            	<a class="glyphicon glyphicon-pencil" rel="bootTip" title="Edit User Group" href="#buildurl('userGroups.addEdit')#&ID=#ID#"></a> | 
+				    <a class="glyphicon glyphicon-trash" rel="bootTip" title="Delete User Group"  href="javascript:void(0);" onclick="javascript:confirmDelete('#ID#')" ></a>
 			   </td>
 			</tr>
 		</cfoutput>
