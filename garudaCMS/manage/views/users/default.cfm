@@ -1,13 +1,13 @@
 <h1>Users</h1><hr>
 <cfoutput>
-<div class="row">
-	<p class="col-sm-12">
-		<a href="#buildurl('users.addEdit')#" class="btn btn-success pull-right"  rel="bootTip" title="Add New User">
+	<div class="row">
+		<p class="col-sm-12">
+			<a href="#buildurl('users.addEdit')#" class="btn btn-success pull-right"  rel="bootTip" title="Add New User">
 
-			<span class="glyphicon glyphicon-plus"></span> Add User
-		</a>
-	</p>
-</div>
+				<span class="glyphicon glyphicon-plus"></span> Add User
+			</a>
+		</p>
+	</div>
 </cfoutput>	
 
 <table class="table table-striped table-bordered table-condensed tablesorter">

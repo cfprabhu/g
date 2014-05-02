@@ -2,9 +2,9 @@
 	
 	<cfscript>
 		function addEdit (rc){
-			param name = "url.ID" default = "";
-			if(isDefined("url.ID"))
-				rc.qData = Application.AdminMenuGroupsDAO.read(ID = ID);
+			param name = "rc.ID" default = "";
+			if(isDefined("rc.ID"))
+				rc.qData = Application.AdminMenuGroupsDAO.read(ID = rc.ID);
 		}
 		
 		function default(rc){
@@ -21,12 +21,10 @@
 		}
 		
 		function delete(rc){
-			Application.AdminMenuGroupsDAO.delete(url.ID);
+			Application.AdminMenuGroupsDAO.delete(rc.ID);
 			rc.msg = "danger:::Admin Menu Group deleted successfully.";
 			variables.fw.redirect("AdminMenugroups", "msg");
 		}
-		
-		
 	</cfscript>
 
 </cfcomponent>

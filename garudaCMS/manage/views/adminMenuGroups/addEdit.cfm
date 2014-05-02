@@ -1,7 +1,7 @@
 <cfoutput>
-<form class = "form-horizontal" action = "#buildurl('AdminMenugroups.save')#" method = "post" role = "form">
+	<form class = "form-horizontal" action = "#buildurl('AdminMenugroups.save')#"method = "post"role = "form">
 		<fieldset>
-			<cfif val(url.ID)>
+			<cfif len(rc.ID)>
 				<legend>Edit Admin Menu Group</legend>
 			<cfelse>
 				<legend>Add Admin Menu Group</legend>
@@ -26,5 +26,5 @@
 				</div>
 			</div>
 	</fieldset>
-</form>
+	</form>
 </cfoutput>

@@ -8,7 +8,7 @@
 		function save(rc){
 			if (len(rc.ID) ){
 				if(rc.photo neq ""){
-					rc.qData = Application.usersDAO.read(ID = ID);
+					rc.qData = Application.usersDAO.read(ID = rc.ID);
 					if(FileExists(expandpath("../assets/upload/#rc.qData.photo#")))
 						FileDelete(expandpath("../assets/upload/#rc.qData.photo#"));
 					if(FileExists(expandpath("../assets/thumbnail/#rc.qData.photo#")))
@@ -40,14 +40,14 @@
 		}
 
 		function delete(rc){
-			Application.usersDAO.delete(url.ID);
+			Application.usersDAO.delete(rc.ID);
 			rc.msg = "danger:::User deleted successfully.";
 			variables.fw.redirect("users", "msg");
 		}
 
 		function addEdit (rc){
-			param name = "url.ID" default = "";
-			rc.qData = Application.usersDAO.read(ID = ID);
+			param name = "rc.ID" default = "";
+			rc.qData = Application.usersDAO.read(ID = rc.ID);
 		}
 	</cfscript>
 
